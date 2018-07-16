@@ -5,7 +5,7 @@
     var ajax;
     ajax = new XMLHttpRequest();
 
-    ajax.open('GET', 'http://localhost:8080/api/tipos-contatos');
+    ajax.open('GET', 'http://mindtec-test.herokuapp.com/api/tipos-contatos');
     ajax.send();
     ajax.onreadystatechange = function(){
         if(ajax.readyState === 4 && ajax.status === 200){
