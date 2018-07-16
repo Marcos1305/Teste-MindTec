@@ -1,0 +1,8 @@
+.nav{
+    background-color: #24292E;
+
+}
+.nav  > li > a{
+    color: #ffffff;
+    font-weight: 300;
+}
