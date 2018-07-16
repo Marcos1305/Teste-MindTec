@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Cadastrar novo cliente</a>
-                </li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a href="" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">Cadastrar novo cliente</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container mt-3">
+        @yield('content')
     </div>
 
 <script src="{{ asset( 'js/app.js') }}"></script>
