@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Http\Requests\StoreClienteRequest;
 
 class ClienteController extends Controller
 {
@@ -41,9 +42,19 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
-        //
+
+        $this->cliente->DataCadastro = date('Y-m-d');
+
+        $saveCliente = $this->cliente->fill($request->all())->save();
+
+        $saveContato = $this->cliente->contato()->create($request->all());
+
+        if($saveCliente && $saveContato)
+            return redirect()->route('cliente.index')->with('success', 'Cliente criado com sucesso!');
+
+
     }
 
     /**

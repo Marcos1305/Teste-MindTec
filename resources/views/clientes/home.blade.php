@@ -7,6 +7,8 @@
             <th scope="col">#</th>
             <th scope="col">Razão Social</th>
             <th scope="col">Data de Cadastro</th>
+            <th scope="col">Tipo de Contato</th>
+            <th scope="col">Descrição do Contato</th>
             <th scope="col">Ativo</th>
             <th>Ações</th>
         </thead>
@@ -16,6 +18,8 @@
                     <td>{{ $cliente->idCliente }}</td>
                     <td>{{ $cliente->RazaoSocial }}</td>
                     <td>{{ date('d/m/Y', strtotime($cliente->DataCadastro)) }}</td>
+                    <td>{{ $cliente->contato->TipoContato  }}</td>
+                    <td>{{ $cliente->contato->DescContato  }}</td>
                     <td>{{ $cliente->BolAtivo  === 1 ? 'Sim' : 'Não' }}</td>
                     <td>
                         <a href="" class="btn btn-warning">Editar</a>
