@@ -22,7 +22,7 @@
                     <td>{{ $cliente->contato->DescContato  }}</td>
                     <td>{{ $cliente->BolAtivo  === 1 ? 'Sim' : 'Não' }}</td>
                     <td>
-                        <a href="" class="btn btn-warning">Editar</a>
+                        <a href="{{ route('cliente.show', $cliente->idCliente) }}" class="btn btn-warning">Editar</a>
                         <a href="" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>

@@ -65,7 +65,9 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $cliente = $this->cliente->find($id);
+
+        return view('clientes.create', compact('cliente'));
     }
 
     /**
@@ -76,7 +78,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -86,9 +88,17 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreClienteRequest $request)
     {
-        //
+
+
+        $cliente = $this->cliente->find($request->cliente_id);
+        $updateCliente = $cliente->update($request->all());
+        $updateContato = $cliente->contato->update($request->all());
+
+        if($updateCliente && $updateContato)
+            return redirect()->route('cliente.index')->with('success',  "Cliente {$cliente->RazaoSocial} atualizado com sucesso!");
+
     }
 
     /**
