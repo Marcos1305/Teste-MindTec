@@ -13,10 +13,10 @@
     <nav>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a href="" class="nav-link">Home</a>
+                <a href="{{ route('cliente.index') }}" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Cadastrar novo cliente</a>
+                <a href="{{ route('cliente.create') }}" class="nav-link">Cadastrar novo cliente</a>
             </li>
         </ul>
     </nav>
@@ -25,5 +25,6 @@
     </div>
 
 <script src="{{ asset( 'js/app.js') }}"></script>
+@yield('extraJS')
 </body>
 </html>
