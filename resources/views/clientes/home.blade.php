@@ -22,8 +22,8 @@
                     <td>{{ $cliente->contato->DescContato  }}</td>
                     <td>{{ $cliente->BolAtivo  === 1 ? 'Sim' : 'Não' }}</td>
                     <td>
-                        <a href="{{ route('cliente.show', $cliente->idCliente) }}" class="btn btn-warning">Editar</a>
-                        <a href="" class="btn btn-danger">Excluir</a>
+                        <a href="{{ route('cliente.show', $cliente->idCliente)}}" class="btn btn-warning">Editar</a>
+                        <a href="{{ route('cliente.delete', $cliente->idCliente)}}" onClick="return confirm('Tem certeza que deseja excluir este registro?')" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
             @empty

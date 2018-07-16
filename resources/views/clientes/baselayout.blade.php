@@ -19,11 +19,11 @@
                 <a href="{{ route('cliente.create') }}" class="nav-link">Cadastrar novo cliente</a>
             </li>
         </ul>
+    </nav>
+    <div class="container mt-3">
         <div class="text-center">
             @include('clientes.alerts')
         </div>
-    </nav>
-    <div class="container mt-3">
         @yield('content')
     </div>
 

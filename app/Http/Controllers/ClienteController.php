@@ -109,6 +109,9 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cliente = $this->cliente->find($id);
+        $deleteCliente = $cliente->delete();
+        if($deleteCliente)
+            return redirect()->back()->with('success', 'Registro excluido com sucesso!');
     }
 }
