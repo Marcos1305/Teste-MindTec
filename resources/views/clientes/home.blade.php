@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="text-center mx-3">Listagem de Clientes</h1>
-    <table class="table mt-5 table-striped table-bordered table-hover">
+    <table class="table-responsive-sm table mt-5 table-striped table-bordered table-hover">
         <thead class="text-center thead-dark ">
             <th scope="col">#</th>
             <th scope="col">Razão Social</th>
